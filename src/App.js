@@ -1,23 +1,18 @@
 import logo from './logo.svg';
 import './App.css';
+import { useSelector } from 'react-redux';
+import Login from './Components/Login';
+import LoginText from './Components/LoginText';
+import Logout from './Components/Logout';
+import LogoutText from './Components/LogoutText'
+
 
 function App() {
+  const loggedInState = useSelector(state => state.ui.currencyIsVisible)
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="container">
+      {loggedInState ? <div><LoginText/><Login/></div>:<div> <LogoutText/><Logout/></div>}
     </div>
   );
 }
