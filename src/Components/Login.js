@@ -12,7 +12,7 @@ const Login = () => {
 
     return (
         <div>
-            <button className ="btn btn-primary" onClick={toggleLoginHandler}>
+            <button className ="btn btn-secondary" onClick={toggleLoginHandler}>
                 <span>Login</span>
             </button>
             

@@ -13,34 +13,34 @@ import Currency from "./Components/Currency";
 
 function App() {
   const loggedInState = useSelector((state) => state.ui.currencyIsVisible);
-  
-  const [currencyList, setCurrencyList] = useState(['',''])
-  
 
-  useEffect(() => {
-   
-  }, []);
+  const [currencyList, setCurrencyList] = useState(["", ""]);
 
-  
-  console.log(currencyList)
+  useEffect(() => {}, []);
+
+  console.log(currencyList);
 
   return (
     <div>
-      <div className="container">
+      <div>
         {loggedInState ? (
-          <div>
-            <LoginText />
-            <Login />
+          <div >
+            <div className="container-fluid p-5 bg-primary text-white text-center">
+              <LoginText />
+              <div>
+                <Login />
+              </div>
+            </div>
           </div>
         ) : (
-          <div>
-            {" "}
+          <div className="container-fluid p-5 bg-primary text-white text-center">
+            
             <LogoutText />
             <Logout />
           </div>
         )}
       </div>
-      <Currency currencies={currencyList}/>
+      <Currency currencies={currencyList} />
     </div>
   );
 }

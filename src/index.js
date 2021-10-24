@@ -5,6 +5,9 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import store from './Store/index'
 import { Provider } from 'react-redux';
+import 'bootstrap/scss/bootstrap.scss'
+import '@popperjs/core'
+import 'bootstrap/dist/js/bootstrap.js'
 
 ReactDOM.render(
   <Provider store= {store}>
